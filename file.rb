@@ -1,6 +1,6 @@
 require 'csv'
 
-customers = CSV.read('customers.csv')
+customers = CSV.read('customers.csv', col_sep: ';', converters: :numeric)
 
 average_money_spent = Array.new
 CSV.foreach('customers.csv', converters: :numeric) do |row|
@@ -24,7 +24,3 @@ CSV.foreach('newcomers.csv', { :col_sep => ';' }) { |row| p row }
 CSV.foreach('newcomers.csv', col_sep: ';') { |row| p row }
 a_string = "Dan;34\nMaria;55"
 CSV.parse(a_string, col_sep: ';') #=> [["Dan", "34"], ["Maria", "55"]]
-
-
-  CSV.foreach('customers.csv') do |row|
-   

@@ -1,6 +1,6 @@
 require 'csv'
 
-customers = CSV.read('customers.csv', col_sep: ';', converters: :numeric)
+customers = CSV.read('customers.csv', col_sep: ',', converters: :numeric)
 
 average_money_spent = Array.new
 CSV.foreach('customers.csv', converters: :numeric) do |row|

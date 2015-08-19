@@ -1,6 +1,6 @@
 require 'csv'
 
-customers = CSV.read('customers.csv')
+customers = CSV.read('customers.csv', { :col_sep => ';' })
 
 CSV.foreach('customers.csv') do |row|
   puts row.inspect
